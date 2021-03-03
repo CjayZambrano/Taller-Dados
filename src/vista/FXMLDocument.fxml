@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="446.0" prefWidth="528.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="tallerdados.FXMLDocumentController" />
+
+<AnchorPane id="AnchorPane" prefHeight="446.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tallerdados.FXMLDocumentController">
+   <children>
+      <WebView layoutX="14.0" layoutY="14.0" prefHeight="176.0" prefWidth="211.0" />
+      <Button fx:id="btnLanzar" layoutX="82.0" layoutY="211.0" mnemonicParsing="false" text="Lanzar" />
+   </children>
+</AnchorPane>

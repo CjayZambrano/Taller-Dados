@@ -15,6 +15,10 @@ public class Lanzamiento extends Base {
 
     private int numDado1;
     private int numDado2;
+    
+    //Pila<Lanzamiento> pilaLanzamientos;
+    
+    //pilaLanzamientos = new Pila<>();
 
     public Lanzamiento() {
     }
@@ -44,5 +48,15 @@ public class Lanzamiento extends Base {
     public Base copy() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    static int[] lanzamiento() {
+ 
+		int[] resultados = new int[2]; //Se tiran dos dados
+ 
+		resultados[0] = (int)(Math.random()*6 + 1); //Primer dado
+		resultados[1] = (int)(Math.random()*6 + 1); //Segundo dado
+ 
+		return resultados;
+	}
        
 }
