@@ -20,11 +20,11 @@ public class Pila<T extends Base> {
     }
     
     public void apilar(T e){
-        elements.addFirst(e);
+        elements.addLast(e);
     }
     
     public T desapilar(){
-        return elements.removeFirst();
+        return elements.removeLast();
     }
      public boolean estaVacia(){
          return elements.isEmpty();
@@ -38,6 +38,6 @@ public class Pila<T extends Base> {
          sb.append("\n"+ "]");
          
          return sb.toString();
-     }
+     }     
      
 }
