@@ -8,7 +8,10 @@ package control;
 import pila.Pila;
 import pila.Lanzamiento;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,7 +24,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import static javafx.util.Duration.seconds;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
