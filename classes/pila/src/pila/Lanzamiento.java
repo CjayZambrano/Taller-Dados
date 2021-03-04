@@ -9,8 +9,14 @@ import pila.Base;
 
 /**
  *
- * @author usuario
- */
+ * @author david_orlando.mena@uao.edu.co David Orlando Mena     2180448 
+ * @author frank_dan.castillo@uao.edu.co Frank Daniel Castillo  2171721
+ * @author cjay.zambrano@uao.edu.co Cjay Zambrano Liñan         2151536
+ * @author maria_camila.reina@uao.edu.co Maria Camila Reina     2190037
+ * @date Feb 2021 
+ */ 
+
+
 public class Lanzamiento extends Base {
 
     private int numDado1;
@@ -43,10 +49,17 @@ public class Lanzamiento extends Base {
     public void setNumDado2(int numDado2) {
         this.numDado2 = numDado2;
     }   
+
+    @Override
+    public String toString() {
+        return "Lanzamiento{" + "numDado1=" + numDado1 + ", numDado2=" + numDado2 + '}';
+    }
+    
     
     @Override
-    public Base copy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Base copy() 
+    {
+        return new Lanzamiento(numDado1, numDado2);
     }
     
     static int[] lanzamiento() {
