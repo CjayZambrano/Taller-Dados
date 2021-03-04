@@ -21,10 +21,6 @@ public class Lanzamiento extends Base {
 
     private int numDado1;
     private int numDado2;
-    
-    //Pila<Lanzamiento> pilaLanzamientos;
-    
-    //pilaLanzamientos = new Pila<>();
 
     public Lanzamiento() {
     }
@@ -54,22 +50,23 @@ public class Lanzamiento extends Base {
     public String toString() {
         return "Lanzamiento{" + "numDado1=" + numDado1 + ", numDado2=" + numDado2 + '}';
     }
-    
-    
+
     @Override
     public Base copy() 
     {
         return new Lanzamiento(numDado1, numDado2);
+
     }
+
     
-    static int[] lanzamiento() {
+    //static int[] lanzamiento() {
  
-		int[] resultados = new int[2]; //Se tiran dos dados
+		//int[] resultados = new int[2]; //Se tiran dos dados
  
-		resultados[0] = (int)(Math.random()*6 + 1); //Primer dado
-		resultados[1] = (int)(Math.random()*6 + 1); //Segundo dado
+		//resultados[0] = (int)(Math.random()*6 + 1); //Primer dado
+		//resultados[1] = (int)(Math.random()*6 + 1); //Segundo dado
  
-		return resultados;
-	}
+		//return resultados;
+	//}
        
 }

@@ -19,7 +19,7 @@ import javafx.stage.Stage;
  * @author maria_camila.reina@uao.edu.co Maria Camila Reina     2190037
  * @date Feb 2021 
  */ 
-public class Implementacionpila extends Application {
+public class tallerdados extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
