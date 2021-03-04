@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,12 +32,25 @@ public class FXMLDocumentController implements Initializable {
     //@FXML
     //private Label label;
     
+    //@FXML
+    //private WebView wv1;
+    
     Pila<Lanzamiento> pilaLanzamientos;
     
-    //@FXML
-    //private void handleButtonAction(ActionEvent event) {
-
-    //}
+    @FXML
+    private void btnLanzamiento(ActionEvent event) {
+        
+        int numDado1 = (int)(Math.random()*6 + 1);;
+        int numDado2 = (int)(Math.random()*6 + 1);;
+        
+        pilaLanzamientos.apilar(new Lanzamiento(numDado1, numDado2));
+        
+        String mostrar = "";            
+        mostrar = pilaLanzamientos.toString();
+        
+        JOptionPane.showMessageDialog(null, mostrar);
+        
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -44,45 +58,5 @@ public class FXMLDocumentController implements Initializable {
         pilaLanzamientos = new Pila<>();
         
     }
-
-    public static void FXMLDocumentController(String[] args){
-        Application.launch(args);
-    }
     
-    public void start(Stage stage) throws Exception {
-        WebView myWebView = new WebView();
-        WebEngine engine = myWebView.getEngine();
-        
-        Button btn = new Button("Load Google");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            public void handle(ActionEvent event) {
-                engine.load("https://wwww.google.com");
-            }
-        });
-        
-        Button btn2 = new Button("Execute JavaScript");
-        btn2.setOnAction(new EventHandler<ActionEvent>() {
-            
-            public void handle(ActionEvent event) {
-                engine.executeScript("window.location = \"https://www.youtube.com/\";");
-            }
-        });
-        
-        Button btn3 = new Button("Load Local");
-        btn3.setOnAction(new EventHandler<ActionEvent>() {
-            
-            public void handle(ActionEvent event) {
-                engine.loadContent("C:\\Users\\usuario\\Documents\\Hoja de Vida html\\Hoja de vida.html");
-            }
-        });
-        
-        VBox root = new VBox();
-        root.getChildren().addAll(myWebView, btn, btn2);
-        
-        Scene scene = new Scene(root, 800, 500);
-        stage.setScene(scene);
-        
-        stage.show();
-    }    
 }
