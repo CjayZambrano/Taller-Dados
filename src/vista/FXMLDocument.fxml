@@ -7,11 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
+<AnchorPane id="AnchorPane" onDragDetected="#btn" prefHeight="437.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
    <children>
       <Button layoutX="78.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnLanzamiento" text="Lanzar" />
       <Button layoutX="201.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnMostrarUltimoLanzamiento" text="Mostrar Ultimo Lanz" />
       <Button layoutX="400.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnParar" text="Detener" />
       <TextArea fx:id="txtA1" layoutX="144.0" layoutY="62.0" prefHeight="213.0" prefWidth="238.0" />
+      <Button layoutX="56.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnNumRepetidos" text="Mostrar Num. Repetidos" />
+      <Button layoutX="309.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnNumPares" text="Mostrar Num. Pares" />
    </children>
 </AnchorPane>

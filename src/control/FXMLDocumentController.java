@@ -8,6 +8,7 @@ package control;
 import pila.Pila;
 import pila.Lanzamiento;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -37,15 +38,17 @@ import pila.OperacionesPila;
  */
 public class FXMLDocumentController implements Initializable {
 
+    private LinkedList<Lanzamiento> valoresRepetidos;
+    private LinkedList<Lanzamiento> valores;
+
     @FXML
     private Label label;
-    
+
     @FXML
     private TextArea txtA1;
-    
+
     //@FXML
     //private WebView wv1;
-    
     Pila<Lanzamiento> pilaLanzamientos;
     Timer timer;
 
@@ -68,16 +71,14 @@ public class FXMLDocumentController implements Initializable {
 
         //String mostrar = "";
         //mostrar = pilaLanzamientos.toString();
-
         //JOptionPane.showMessageDialog(null, mostrar);
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         pilaLanzamientos = new Pila<>();
-        timer= new Timer();
+        timer = new Timer();
 
     }
 
@@ -90,7 +91,135 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void btnParar(ActionEvent event) {
         timer.cancel();
-        
+    }
+
+    @FXML
+    private void btnNumRepetidos(ActionEvent event) {
+        Pila<Lanzamiento> numRepetidos = OperacionesPila.obtenerNumRepetido(pilaLanzamientos);
+        valoresRepetidos.clear();
+
+        int valor1 = 0;
+        int valor2 = 0;
+        int valor3 = 0;
+        int valor4 = 0;
+        int valor5 = 0;
+        int valor6 = 0;
+
+        while (!numRepetidos.estaVacia()) {
+            Lanzamiento auxiliar = numRepetidos.desapilar();
+            int valordado1 = auxiliar.getNumDado1();
+            int valordado2 = auxiliar.getNumDado2();
+
+            if (valordado1 == 1) {
+                valor1++;
+
+            }
+            if (valordado1 == 2) {
+                valor2++;
+
+            }
+            if (valordado1 == 3) {
+                valor3++;
+
+            }
+            if (valordado1 == 4) {
+                valor4++;
+
+            }
+            if (valordado1 == 5) {
+                valor5++;
+
+            }
+            if (valordado1 == 6) {
+                valor6++;
+
+            }
+            if (valordado2 == 1) {
+                valor1++;
+
+            }
+            if (valordado2 == 2) {
+                valor2++;
+
+            }
+            if (valordado2 == 3) {
+                valor3++;
+
+            }
+            if (valordado2 == 4) {
+                valor4++;
+
+            }
+            if (valordado2 == 5) {
+                valor5++;
+
+            }
+            if (valordado2 == 6) {
+                valor6++;
+
+            }
+        }
+        valoresRepetidos.add(new Lanzamiento(1, valor1));
+        valoresRepetidos.add(new Lanzamiento(2, valor2));
+        valoresRepetidos.add(new Lanzamiento(3, valor3));
+        valoresRepetidos.add(new Lanzamiento(4, valor4));
+        valoresRepetidos.add(new Lanzamiento(5, valor5));
+        valoresRepetidos.add(new Lanzamiento(6, valor6));
+
+        JOptionPane.showMessageDialog(null, numRepetidos.toString());
+    }
+
+    @FXML
+    private void btnNumPares(ActionEvent event) {
+        Pila<Lanzamiento> parVeces = OperacionesPila.obtenerParR(pilaLanzamientos);
+        valores.clear();
+
+        int valor1 = 0;
+        int valor2 = 0;
+        int valor3 = 0;
+        int valor4 = 0;
+        int valor5 = 0;
+        int valor6 = 0;
+
+        while (!parVeces.estaVacia()) {
+            Lanzamiento auxiliar = parVeces.desapilar();
+            int valordado1 = auxiliar.getNumDado1();
+            int valordado2 = auxiliar.getNumDado2();
+
+            if (valordado1 == 1 && valordado2 == 1) {
+                valor1++;
+
+            }
+            if (valordado1 == 2 && valordado2 == 2) {
+                valor2++;
+
+            }
+            if (valordado1 == 3 && valordado2 == 3) {
+                valor3++;
+
+            }
+            if (valordado1 == 4 && valordado2 == 4) {
+                valor4++;
+
+            }
+            if (valordado1 == 5 && valordado2 == 5) {
+                valor5++;
+
+            }
+            if (valordado1 == 6 && valordado2 == 6) {
+                valor6++;
+
+            }
+        }
+        valores.add(new Lanzamiento(1, valor1));
+        valores.add(new Lanzamiento(2, valor2));
+        valores.add(new Lanzamiento(3, valor3));
+        valores.add(new Lanzamiento(4, valor4));
+        valores.add(new Lanzamiento(5, valor5));
+        valores.add(new Lanzamiento(6, valor6));
+
+        JOptionPane.showMessageDialog(null, parVeces.toString());
 
     }
+
 }
