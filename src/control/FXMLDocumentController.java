@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,12 +22,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import pila.OperacionesPila;
+import pila.Tools;
 
 /**
  *
@@ -45,11 +48,23 @@ public class FXMLDocumentController implements Initializable {
     private Label label;
 
     @FXML
+    private TextField txtnum1;
+
+    @FXML
+    private TextField txtnum2;
+
+    @FXML
+    private TextField txtvalorRecibido;
+
+    @FXML
     private TextArea txtA1;
 
-    //@FXML
-    //private WebView wv1;
+    @FXML
+    private WebView wv1;
+    private WebEngine engine;
+
     Pila<Lanzamiento> pilaLanzamientos;
+    Pila<Lanzamiento> numRepetidos;
     Timer timer;
 
     @FXML
@@ -63,22 +78,12 @@ public class FXMLDocumentController implements Initializable {
                 Lanzamiento lanzar = new Lanzamiento(numDado1, numDado2);
 
                 pilaLanzamientos.apilar(lanzar);
-                txtA1.setText(pilaLanzamientos.toString());
+                Platform.runLater(() -> engine.loadContent(Tools.convertirPilaAHtml(pilaLanzamientos)));
+                //txtA1.setText(pilaLanzamientos.toString());
 
             }
         };
         timer.schedule(task, 30, 4000);
-
-        //String mostrar = "";
-        //mostrar = pilaLanzamientos.toString();
-        //JOptionPane.showMessageDialog(null, mostrar);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-
-        pilaLanzamientos = new Pila<>();
-        timer = new Timer();
 
     }
 
@@ -95,131 +100,35 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void btnNumRepetidos(ActionEvent event) {
-        Pila<Lanzamiento> numRepetidos = OperacionesPila.obtenerNumRepetido(pilaLanzamientos);
-        valoresRepetidos.clear();
+        int valor;
+        valor = Integer.parseInt(txtvalorRecibido.getText());
+        numRepetidos = OperacionesPila.obtenerNumRepetido(pilaLanzamientos, valor);
 
-        int valor1 = 0;
-        int valor2 = 0;
-        int valor3 = 0;
-        int valor4 = 0;
-        int valor5 = 0;
-        int valor6 = 0;
-
-        while (!numRepetidos.estaVacia()) {
-            Lanzamiento auxiliar = numRepetidos.desapilar();
-            int valordado1 = auxiliar.getNumDado1();
-            int valordado2 = auxiliar.getNumDado2();
-
-            if (valordado1 == 1) {
-                valor1++;
-
-            }
-            if (valordado1 == 2) {
-                valor2++;
-
-            }
-            if (valordado1 == 3) {
-                valor3++;
-
-            }
-            if (valordado1 == 4) {
-                valor4++;
-
-            }
-            if (valordado1 == 5) {
-                valor5++;
-
-            }
-            if (valordado1 == 6) {
-                valor6++;
-
-            }
-            if (valordado2 == 1) {
-                valor1++;
-
-            }
-            if (valordado2 == 2) {
-                valor2++;
-
-            }
-            if (valordado2 == 3) {
-                valor3++;
-
-            }
-            if (valordado2 == 4) {
-                valor4++;
-
-            }
-            if (valordado2 == 5) {
-                valor5++;
-
-            }
-            if (valordado2 == 6) {
-                valor6++;
-
-            }
-        }
-        valoresRepetidos.add(new Lanzamiento(1, valor1));
-        valoresRepetidos.add(new Lanzamiento(2, valor2));
-        valoresRepetidos.add(new Lanzamiento(3, valor3));
-        valoresRepetidos.add(new Lanzamiento(4, valor4));
-        valoresRepetidos.add(new Lanzamiento(5, valor5));
-        valoresRepetidos.add(new Lanzamiento(6, valor6));
-
-        JOptionPane.showMessageDialog(null, numRepetidos.toString());
+        JOptionPane.showMessageDialog(null, "Las veces que ha salido el valor introducido son:"+numRepetidos.toString());
     }
 
     @FXML
     private void btnNumPares(ActionEvent event) {
-        Pila<Lanzamiento> parVeces = OperacionesPila.obtenerParR(pilaLanzamientos);
-        valores.clear();
-
-        int valor1 = 0;
-        int valor2 = 0;
-        int valor3 = 0;
-        int valor4 = 0;
-        int valor5 = 0;
-        int valor6 = 0;
-
-        while (!parVeces.estaVacia()) {
-            Lanzamiento auxiliar = parVeces.desapilar();
-            int valordado1 = auxiliar.getNumDado1();
-            int valordado2 = auxiliar.getNumDado2();
-
-            if (valordado1 == 1 && valordado2 == 1) {
-                valor1++;
-
-            }
-            if (valordado1 == 2 && valordado2 == 2) {
-                valor2++;
-
-            }
-            if (valordado1 == 3 && valordado2 == 3) {
-                valor3++;
-
-            }
-            if (valordado1 == 4 && valordado2 == 4) {
-                valor4++;
-
-            }
-            if (valordado1 == 5 && valordado2 == 5) {
-                valor5++;
-
-            }
-            if (valordado1 == 6 && valordado2 == 6) {
-                valor6++;
-
-            }
-        }
-        valores.add(new Lanzamiento(1, valor1));
-        valores.add(new Lanzamiento(2, valor2));
-        valores.add(new Lanzamiento(3, valor3));
-        valores.add(new Lanzamiento(4, valor4));
-        valores.add(new Lanzamiento(5, valor5));
-        valores.add(new Lanzamiento(6, valor6));
-
-        JOptionPane.showMessageDialog(null, parVeces.toString());
+        int valor1;
+        int valor2;
+        int vecesPar;
+        Lanzamiento par= new Lanzamiento();
+        valor1 = Integer.parseInt(txtnum1.getText());
+        valor2 = Integer.parseInt(txtnum2.getText());
+        Pila<Lanzamiento> parVeces = OperacionesPila.obtenerPar(pilaLanzamientos, valor1, valor2);
+        par= parVeces.desapilar();
+        vecesPar= par.getNumDado1();
+        JOptionPane.showMessageDialog(null, "El número de veces que ha salido este par es de: "+ vecesPar+ " veces.");
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        pilaLanzamientos = new Pila<>();
+        timer = new Timer();
+        numRepetidos = new Pila<>();
+        engine = wv1.getEngine();
+
+    }
 }

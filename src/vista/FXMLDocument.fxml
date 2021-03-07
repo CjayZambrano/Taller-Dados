@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +9,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" onDragDetected="#btn" prefHeight="437.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="471.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
    <children>
-      <Button layoutX="78.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnLanzamiento" text="Lanzar" />
-      <Button layoutX="201.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnMostrarUltimoLanzamiento" text="Mostrar Ultimo Lanz" />
-      <Button layoutX="400.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnParar" text="Detener" />
-      <TextArea fx:id="txtA1" layoutX="144.0" layoutY="62.0" prefHeight="213.0" prefWidth="238.0" />
-      <Button layoutX="56.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnNumRepetidos" text="Mostrar Num. Repetidos" />
-      <Button layoutX="309.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnNumPares" text="Mostrar Num. Pares" />
+      <Button layoutX="45.0" layoutY="323.0" mnemonicParsing="false" onAction="#btnLanzamiento" prefHeight="25.0" prefWidth="146.0" text="Lanzar" textFill="#292268">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="45.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnMostrarUltimoLanzamiento" prefHeight="25.0" prefWidth="146.0" text="Mostrar Ultimo Lanz" />
+      <Button layoutX="263.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnParar" prefHeight="25.0" prefWidth="122.0" text="Detener" textFill="#bf2525">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="45.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnNumRepetidos" text="Mostrar Num. Repetidos" />
+      <Button layoutX="263.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnNumPares" text="Mostrar Num. Pares" />
+      <TextField fx:id="txtvalorRecibido" layoutX="203.0" layoutY="407.0" prefHeight="25.0" prefWidth="39.0" promptText="num" />
+      <WebView fx:id="wv1" layoutX="92.0" layoutY="29.0" prefHeight="207.0" prefWidth="361.0" />
+      <TextField fx:id="txtnum1" layoutX="400.0" layoutY="407.0" prefHeight="25.0" prefWidth="51.0" promptText="valor1" />
+      <TextField fx:id="txtnum2" layoutX="463.0" layoutY="407.0" prefHeight="25.0" prefWidth="51.0" promptText="valor2" />
    </children>
 </AnchorPane>
