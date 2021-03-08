@@ -16,7 +16,7 @@
             <Font name="System Bold" size="14.0" />
          </font></Button>
       <Button layoutX="45.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnMostrarUltimoLanzamiento" prefHeight="25.0" prefWidth="146.0" text="Mostrar Ultimo Lanz" />
-      <Button layoutX="263.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnParar" prefHeight="25.0" prefWidth="122.0" text="Detener" textFill="#bf2525">
+      <Button layoutX="353.0" layoutY="323.0" mnemonicParsing="false" onAction="#btnParar" prefHeight="30.0" prefWidth="146.0" text="Detener" textFill="#bf2525">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
