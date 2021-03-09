@@ -17,7 +17,8 @@ import javafx.stage.Stage;
  * @author frank_dan.castillo@uao.edu.co Frank Daniel Castillo  2171721
  * @author cjay.zambrano@uao.edu.co Cjay Zambrano Liñan         2151536
  * @author maria_camila.reina@uao.edu.co Maria Camila Reina     2190037
- * @date Feb 2021 
+ * @date Feb 2021
+ * @version 1.0
  */ 
 public class tallerdados extends Application {
     

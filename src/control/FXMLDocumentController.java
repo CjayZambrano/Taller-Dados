@@ -39,6 +39,7 @@ import pila.Tools;
  * @author cjay.zambrano@uao.edu.co Cjay Zambrano Liñan 2151536
  * @author maria_camila.reina@uao.edu.co Maria Camila Reina 2190037
  * @date Feb 2021
+ * @version 1.0
  */
 public class FXMLDocumentController implements Initializable {
 
@@ -59,6 +60,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextArea txtA1;
+    
+    @FXML
+    private TextField txtvalorProb;
 
     @FXML
     private WebView wv1;
@@ -80,7 +84,6 @@ public class FXMLDocumentController implements Initializable {
 
                 pilaLanzamientos.apilar(lanzar);
                 Platform.runLater(() -> engine.loadContent(Tools.convertirPilaAHtml(pilaLanzamientos)));
-                //txtA1.setText(pilaLanzamientos.toString());
 
             }
         };
@@ -121,6 +124,48 @@ public class FXMLDocumentController implements Initializable {
         vecesPar = par.getNumDado1();
         JOptionPane.showMessageDialog(null, "El número de veces que ha salido este par es de: " + vecesPar + " veces.");
 
+    }
+    
+    @FXML
+    private void btnParP(ActionEvent event) {
+        int valor1;
+        
+        int prom;
+        Lanzamiento pro = new Lanzamiento();
+        valor1 = Integer.parseInt(txtnum1.getText());
+        
+        Pila<Lanzamiento> promedio = Modelo.obtenerParPromedio(pilaLanzamientos, valor1);
+        JOptionPane.showMessageDialog(null, "El número del par promedio es: " + promedio + ".");
+
+    }
+    
+    @FXML
+    private void btnProb(ActionEvent event) {
+        double probabilidad = 0;
+        int number;
+        String respt;
+         number = Integer.parseInt(txtvalorProb.getText());
+         if (number == 1){
+             probabilidad = (1*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         if (number == 2){
+             probabilidad = (2*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         if (number == 3){
+             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         if (number == 4){
+             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         if (number == 5){
+             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         if (number == 6){
+             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+         }
+         respt = "La probabilidad de que en " + txtvalorProb.getText() + " tiradas el numero sea 6 es de: " + probabilidad + "%";
+        
+        JOptionPane.showMessageDialog(null, respt);
     }
 
     @Override
