@@ -111,7 +111,7 @@ public class Modelo {
                 cont6++;
                 cont++;
             }
-            //cadena de if el valor anterior es mayor al presente muestre ese valo (el mayor)
+
             if (cont1 > cont2 && cont1 > cont3 && cont1 > cont4 && cont1 > cont5 && cont1 > cont6) {
                 contppp = 1;
             }

@@ -27,7 +27,7 @@
       <TextField fx:id="txtnum1" layoutX="400.0" layoutY="407.0" prefHeight="25.0" prefWidth="51.0" promptText="valor1" />
       <TextField fx:id="txtnum2" layoutX="463.0" layoutY="407.0" prefHeight="25.0" prefWidth="51.0" promptText="valor2" />
       <Button layoutX="45.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnParP" prefHeight="25.0" prefWidth="146.0" text="Mostrar Par Promedio" />
-      <Button layoutX="263.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnProb" prefHeight="25.0" prefWidth="122.0" text="Mostrar Probabilidad" />
-      <TextField fx:id="txtvalorProb" layoutX="400.0" layoutY="445.0" prefHeight="25.0" prefWidth="39.0" promptText="val" />
+      <Button layoutX="263.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnProb" prefHeight="25.0" prefWidth="189.0" text="Mostrar Probabilidad en 6 tiros" />
+      <TextField fx:id="txtvalorProb" editable="false" layoutX="469.0" layoutY="445.0" prefHeight="25.0" prefWidth="39.0" promptText="6" visible="false" />
    </children>
 </AnchorPane>

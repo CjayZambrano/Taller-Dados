@@ -144,26 +144,26 @@ public class FXMLDocumentController implements Initializable {
         double probabilidad = 0;
         int number;
         String respt;
-         number = Integer.parseInt(txtvalorProb.getText());
-         if (number == 1){
-             probabilidad = (1*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
-         }
-         if (number == 2){
-             probabilidad = (2*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
-         }
-         if (number == 3){
-             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
-         }
-         if (number == 4){
-             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
-         }
-         if (number == 5){
-             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
-         }
+         number = 6;
+//         if (number == 1){
+//             probabilidad = (1*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+//         }
+//         if (number == 2){
+//             probabilidad = (2*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+//         }
+//         if (number == 3){
+//             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+//         }
+//         if (number == 4){
+//             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+//         }
+//         if (number == 5){
+//             probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
+//         }
          if (number == 6){
              probabilidad = (3*0.16*(0.84*0.84*0.84*0.84*0.84))*100;
          }
-         respt = "La probabilidad de que en " + txtvalorProb.getText() + " tiradas el numero sea 6 es de: " + probabilidad + "%";
+         respt = "La probabilidad de que en 6 tiradas el numero sea 6 es de: " + probabilidad + "%";
         
         JOptionPane.showMessageDialog(null, respt);
     }
