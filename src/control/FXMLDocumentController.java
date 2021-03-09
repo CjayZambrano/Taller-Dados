@@ -176,6 +176,8 @@ public class FXMLDocumentController implements Initializable {
         numRepetidos = new Pila<>();
         engine = wv1.getEngine();
 
+        
+        
     }
 
     
